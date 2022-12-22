@@ -9,6 +9,7 @@ import Room from './components/Room';
 function App() {
 
   const [rooms,setRooms]=useState([])
+ const [clor,setcolor] = useState('white')
 
   const addRoom =(n,c,t)=>{
         let temp = {
@@ -18,6 +19,16 @@ function App() {
           products:[]
 
         }
+        if(temp.name.length >= 5){
+          alert('eror length of name')
+          return false
+        }
+        if(temp.name.length === 0){
+          alert('eror name')
+          return false
+        }
+     
+      
         setRooms([...rooms,temp])
   }
 
@@ -25,6 +36,7 @@ function App() {
 const addProduct =(index,typeOfProduct)=>{
 let temp = {condition:false,type:typeOfProduct}
 rooms[index].products.push(temp)
+
 setRooms([...rooms])
 
 }

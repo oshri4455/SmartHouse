@@ -11,22 +11,7 @@ const [color,setColor]=useState('')
 
 const nav = useNavigate()
 
-const checkInpt = ()=>{
-  if(name.length >= 5){
-    alert('eror length of name')
-    return
-  }
-  if(name.length === 0){
-    alert('eror')
-    nav('/')
-    return
-  }
-  else{
-    props.addRoom(name,color,type)
-    nav('/')
-  }
 
-}
 
 
 
@@ -45,7 +30,7 @@ const checkInpt = ()=>{
       <input className='inpt'  onChange={(e)=>{setColor(e.target.value)}} type="text" placeholder='color' />
       <br />
 <br />
-<Link to={'/'}><button id='butoonAdd' onClick={()=>{ props.addRoom(name,type,color);checkInpt()}}>צור</button></Link>
+<Link to={'/'}><button id='butoonAdd' onClick={()=>{ props.addRoom(name,color,type)}}>צור</button></Link>
 
 
     </div>
