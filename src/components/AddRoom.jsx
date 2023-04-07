@@ -13,7 +13,7 @@ const nav = useNavigate()
 
 const checkInpt = ()=>{
   if(name.length >= 5){
-    alert('eror length of name')
+    nav('/')
     return
   }
   if(name.length === 0){
