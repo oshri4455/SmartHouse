@@ -2,7 +2,7 @@
   "name": "smarthouse",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://oshri4455.github.io/smart/",
+  "homepage": "http://oshri4455.github.io/SmartHouse/",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
