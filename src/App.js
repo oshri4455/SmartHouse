@@ -18,7 +18,17 @@ function App() {
           products:[]
 
         }
-        setRooms([...rooms,temp])
+        if(temp.name.length >= 5){
+         alert('eror length of name')
+         return false
+        }
+        if(temp.name.length === 0){
+          alert('eror')
+          return false
+        }
+      
+setRooms([...rooms,temp])
+    
   }
 
 
