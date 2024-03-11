@@ -11,28 +11,38 @@ const [color,setColor]=useState('')
 
 const nav = useNavigate()
 
-const checkInpt = ()=>{
-  if(name.length >= 5){
-    nav('/')
-    return
-  }
-  if(name.length === 0){
-    alert('eror')
-    nav('/')
-    return
-  }
-  else{
-    props.addRoom(name,color,type)
-    nav('/')
-  }
 
+const validColors = ['red', 'blue', 'green', 'yellow', 'purple', 'black', 'white', 'gray', 'brown', 'orange']; // רשימת צבעים תקנים
+const isValidColor = (color) => {
+  return validColors.includes(color.toLowerCase()); // בדיקת האם הצבע קיים ברשימת הצבעים התקנים
 }
 
+const checkInput = () => {
+  if ( name.length === 0 || name.length >= 5) {
+    alert('error');
+    nav('/');
+    return;
+  }
+  if (!isValidColor(color)) {
+    alert('error');
+    nav('/');
+    return;
+  }
 
+  // אם לא נקבל אזהרה, נוסיף את החדר
+  props.addRoom(name, color, type);
+  nav('/');
+}
 
   return (
-    <div>
+    <div id='divRoom'>
+      <br />
+      <h2 style={{color:'white'}}>Select which room type you would like to add</h2>
+      <br />
+      <br />
+    
       <select id='select' onChange={(e)=>{setType(e.target.value)}}>
+        <option value="">בחר מהרשימה</option>
         <option value="מטבח">מטבח</option>
         <option value="סלון">סלון</option>
         <option value="חדר שינה">חדר שינה</option>
@@ -45,7 +55,7 @@ const checkInpt = ()=>{
       <input className='inpt'  onChange={(e)=>{setColor(e.target.value)}} type="text" placeholder='color' />
       <br />
 <br />
-<Link to={'/'}><button id='butoonAdd' onClick={()=>{ props.addRoom(name,type,color);checkInpt()}}>צור</button></Link>
+<Link to={'/'}><button id='butoonAdd' onClick={checkInput}>צור</button></Link>
 
 
     </div>

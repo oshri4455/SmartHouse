@@ -51,7 +51,7 @@ setRooms([...rooms])
   return (
     <div className="App">
 
-<h1 >Smart house</h1>
+<h1 style={{color:'blueviolet',fontSize:'50px'}} >Smart house</h1>
 <hr></hr>
 <HashRouter>
 <Routes>

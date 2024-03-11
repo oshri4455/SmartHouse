@@ -26,21 +26,20 @@ const change =()=>{
 
 
   return (
-    <div>
-      <h1>{props.name}</h1>
-      <h1>{props.type}</h1>
+    <div id='typeDiv'>
+      <h1 style={{color:'white'}}>שם החדר : {props.name}</h1>
+      <h1 style={{color:'white'}}>סוג החדר :{props.type}</h1>
 
     {show()}
 
-{props.products.map((val,index)=>{
-
-let condition = val.condition ? 'green' : 'red'
-
-return <button  id='button3' onClick={()=>{props.changeCondition(props.index,index)}}  style={{backgroundColor:condition}} >{val.type}</button>
-
-
+    {props.products.slice(0, 5).map((val, index) => {
+  let condition = val.condition ? 'green' : 'red';
+  return (
+    <button key={index} id='button3' onClick={() => { props.changeCondition(props.index, index) }} style={{ backgroundColor: condition }}>
+      {val.type}
+    </button>
+  );
 })}
-
 
 
 

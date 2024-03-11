@@ -50,6 +50,13 @@
 
 }
 
+#divRoom{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(155, 119, 0, 0.42);
+    margin: 0 auto;
+    border-radius: 30px;
+    }
 
 #rooms{
    width: 200px;
@@ -59,6 +66,14 @@
    top: 10px;
    text-align: center;
 
+
+}
+#typeDiv{
+    width :500px;
+    height: 500px;
+    background-color: rgba(155, 119, 0, 0.42);
+    margin: 0 auto;
+    border-radius: 30px;   
 }
 
 #butoonAdd{
