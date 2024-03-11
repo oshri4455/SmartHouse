@@ -13,7 +13,7 @@ return  <Link to={`room${val.name}`}><button id='button2'style={{backgroundColor
         })}
 
 
-        <Link to={'addRoom'}> <button id='addRoom' title='Click here to add a room' style={{width:'70px',height:'50px',backgroundColor:'blue',color:'white'}}>+</button></Link>
+        <Link to={'addRoom'}> <button id='addRoom' title='Click here to add a room' >+</button></Link>
       
     </div>
   )
