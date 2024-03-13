@@ -19,18 +19,19 @@ const isValidColor = (color) => {
 
 const checkInput = () => {
   if ( name.length === 0 || name.length >= 5) {
-    alert('error');
+    alert('The length of the name is too long');
     nav('/');
     return;
   }
   if (!isValidColor(color)) {
-    alert('error');
+    alert('Fill in the requested color');
     nav('/');
     return;
   }
 
   // אם לא נקבל אזהרה, נוסיף את החדר
   props.addRoom(name, color, type);
+alert('You have successfully added a new room')
   nav('/');
 }
 
